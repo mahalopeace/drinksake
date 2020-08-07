@@ -1,5 +1,6 @@
 <?php
 
+// sqlite3 function wrapper
 function opendatabase($dbpath)
 {
 	$dbhandle = new SQLite3($dbpath);
