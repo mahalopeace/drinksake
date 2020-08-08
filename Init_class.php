@@ -1,6 +1,6 @@
 <?php
 
-
+/* wrapper for sqlite3 */
 class Init_class {
 	var $db_object;
 	var $decode_key = "abcdefg";
