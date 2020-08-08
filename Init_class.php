@@ -1,5 +1,6 @@
 <?php
 
+
 class Init_class {
 	var $db_object;
 	var $decode_key = "abcdefg";
