@@ -2,67 +2,67 @@
 
 class Init_class {
 	var $db_object;
-    var $decode_key = "abcdefg";
-    var $db_user  = "usr";
-    var $db_pass  = "passwd";
-    var $db_host  = "localhost";
-    var $db_name  = "kisop";
-    var $bbs_name = "ƒLƒ\ƒs[Œf¦”Â";
+	var $decode_key = "abcdefg";
+	var $db_user  = "usr";
+	var $db_pass  = "passwd";
+	var $db_host  = "localhost";
+	var $db_name  = "kisop";
+	var $bbs_name = "ã‚­ã‚½ãƒ”ãƒ¼æ²ç¤ºæ¿";
 
-    function Init_class($dbpath)
+	function Init_class($dbpath)
 	{
- 		$this->db_object = 0; //new DB_class($dbpath);
- 	}
-    
+		$this->db_object = 0; //new DB_class($dbpath);
+	}
+
 	function max_length_check($p_string, $p_length, $p_name)
 	{
-        if(strlen($p_string) > $p_length)
+		if(strlen($p_string) > $p_length)
 		{
-            $this->disp_err_message($p_name."‚ª’·‚·‚¬‚Ü‚·(Å’á”¼Šp".$p_length."•¶š)");
+		    $this->disp_err_message($p_name."ãŒé•·ã™ãã¾ã™(æœ€ä½åŠè§’".$p_length."æ–‡å­—)");
 		}
-    }
-    
+	}
+
 	function min_length_check($p_string, $p_length, $p_name)
 	{
-        if(strlen($p_string) < $p_length)
+		if(strlen($p_string) < $p_length)
 		{
-            $this->disp_err_message($p_name."‚ª’Z‚·‚¬‚Ü‚·(Å’á”¼Šp".$p_length."•¶š)");
-        }
-    }
+		$this->disp_err_message($p_name."ãŒçŸ­ã™ãã¾ã™(æœ€ä½åŠè§’".$p_length."æ–‡å­—)");
+		}
+	}
     
 	function indi_check($p_string,$p_name)
 	{
-        if(strlen($p_string) == 0)
-		{
-            $this->disp_err_message($p_name."‚Í•K‚¸“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
-        }
-    }
+		if(strlen($p_string) == 0)
+			{
+		    $this->disp_err_message($p_name."ã¯å¿…ãšå…¥åŠ›ã—ã¦ãã ã•ã„");
+		}
+	}
     
 	function mail_check($p_string)
 	{
-        if(strlen($p_string) != 0 && !ereg("^[a-zA-Z0-9_\.\-]+@(([a-zA-Z0-9_\-]+\.)+[a-zA-Z0-9]+$)", $p_string))
-		{
-            $this->disp_err_message("ƒ[ƒ‹ƒAƒhƒŒƒX‚ğ³‚µ‚­“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
-        }
-    }
+		if(strlen($p_string) != 0 && !ereg("^[a-zA-Z0-9_\.\-]+@(([a-zA-Z0-9_\-]+\.)+[a-zA-Z0-9]+$)", $p_string))
+			{
+		    $this->disp_err_message("ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’æ­£ã—ãå…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
+		}
+	}
     
 	function uri_check($p_string)
 	{
-        if(strlen($p_string) != 0 && !ereg("^http://+($|[a-zA-Z0-9_~\.\-\/])+$",$p_string))
+		if(strlen($p_string) != 0 && !ereg("^http://+($|[a-zA-Z0-9_~\.\-\/])+$",$p_string))
 		{
-            $this->disp_err_message("URL‚ğ³‚µ‚­“ü—Í‚µ‚Ä‚­‚¾‚³‚¢¡ ");
-        }
-    }
+		$this->disp_err_message("URLã‚’æ­£ã—ãå…¥åŠ›ã—ã¦ãã ã•ã„ï½¡ ");
+		}
+	}
     
 	function disp_err_message($p_message)
 	{
-        disp_html_header("ƒGƒ‰[");
-        $html_string ="<div class = \"title\">".$p_message."</div><hr /><br /><a href=\"#\" onClick=\"history.back(); return false;\">‘O‚Ö–ß‚é</a>";
-        print($html_string);
-        $this->db_object->disconnect();
-        disp_html_footer();
-        exit;
-    }
+		disp_html_header("ã‚¨ãƒ©ãƒ¼");
+		$html_string ="<div class = \"title\">".$p_message."</div><hr /><br /><a href=\"#\" onClick=\"history.back(); return false;\">å‰ã¸æˆ»ã‚‹</a>";
+		print($html_string);
+		$this->db_object->disconnect();
+		disp_html_footer();
+		return;
+    	}
     
 	function get_decode_key()
 	{
