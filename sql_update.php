@@ -10,9 +10,6 @@
 
 <p>文字列変換</p>
 
-
-
-
 <?php
 require_once("db_functions.php");
 
