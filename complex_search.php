@@ -1,4 +1,5 @@
 ﻿<?php
+
 require_once("db_functions.php");
 header('Content-type: text/html; charset=UTF-8');
 
